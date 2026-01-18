@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #2d3748;
+    color: white;
+}
+
+.bebas {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+}
+
+.hero-bg {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), #2d3748;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    background: #ef4444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ef4444;
+}
+
+.nav-link.active {
+    color: white;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.search-btn:hover {
+    color: #ef4444;
+}
+
+.slide-numbers {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.slide-number {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 7.5rem;
+    line-height: 0.9;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: rgba(255,255,255,0.3);
+}
+
+.slide-number:hover {
+    color: rgba(255,255,255,0.5);
+}
+
+.slide-number.active {
+    color: white;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 50rem; /* Dikurangi agar tidak terlalu lebar */
+}
+
+.red-circle {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #ef4444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.hero-title {
+    font-size: 9rem;
+    line-height: 0.9;
+    margin-bottom: 3rem;
+    text-align: left; /* Pastikan align kiri */
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 5rem;
+    }
+    .slide-numbers {
+        right: 1rem;
+    }
+    .slide-number {
+        font-size: 4rem;
+    }
+}
+
+.features {
+    display: flex; /* Ubah dari grid ke flex */
+    gap: 2.5rem;
+    max-width: 100%; /* Full width dari hero-content */
+}
+
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+.feature {
+    flex: 1; /* Setiap feature mengambil space yang sama */
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-circle {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.feature:hover .feature-circle {
+    border-color: #ef4444;
+    transform: scale(1.1);
+}
+
+.feature-text {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.feature-link {
+    display: inline-flex;
+    align-items: center;
+    color: #ef4444;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: gap 0.3s;
+}
+
+.feature-link:hover {
+    color: #dc2626;
+    gap: 0.5rem;
+}
+
+.feature-link span {
+    margin-left: 0.25rem;
+    transition: margin 0.3s;
+}
+
+.feature:hover .feature-link span {
+    margin-left: 0.5rem;
+}
