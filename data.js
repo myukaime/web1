@@ -11,6 +11,11 @@ const appData = {
         { name: 'Contact', href: '#contact', active: false }
     ],
     slideNumbers: ['01', '03', '05'],
+    backgrounds: [
+        '1308206.png',
+        'https://images.unsplash.com/photo-1542640244-7e672d6cef4e?w=1920&q=80',
+        'https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=1920&q=80'
+    ],
     hero: {
         icon: '⛩',
         title: ['VISIT', 'TOKYO']
