@@ -8,14 +8,12 @@ function renderNavbar() {
     const navContent = document.createElement('div');
     navContent.className = 'nav-content';
     
-    // Logo
     const logo = document.createElement('div');
     logo.className = 'logo';
     logo.innerHTML = `
         <span class="logo-text bebas">${appData.logo.text}</span>
     `;
     
-    // Navigation Menu
     const navMenu = document.createElement('div');
     navMenu.className = 'nav-menu';
     appData.navigation.forEach(item => {
@@ -56,11 +54,22 @@ function renderSlideNumbers() {
                 el.classList.remove('active');
             });
             this.classList.add('active');
+            changeBackground(index);
         });
         slideNumbersDiv.appendChild(slideNum);
     });
     
     return slideNumbersDiv;
+}
+
+function changeBackground(index) {
+    const heroBg = document.querySelector('.hero-bg');
+    heroBg.style.opacity = '0';
+    
+    setTimeout(() => {
+        heroBg.style.backgroundImage = `url('${appData.backgrounds[index]}')`;
+        heroBg.style.opacity = '1';
+    }, 300);
 }
 
 function renderHero() {
@@ -75,17 +84,14 @@ function renderHero() {
     const heroContent = document.createElement('div');
     heroContent.className = 'hero-content';
     
-    // Red Circle
     const redCircle = document.createElement('div');
     redCircle.className = 'red-circle';
     redCircle.textContent = appData.hero.icon;
     
-    // Title
     const title = document.createElement('h1');
     title.className = 'hero-title bebas';
     title.innerHTML = appData.hero.title.join('<br/>');
     
-    // Features
     const features = document.createElement('div');
     features.className = 'features';
     
@@ -112,6 +118,10 @@ function initApp() {
     const app = document.getElementById('app');
     app.appendChild(renderNavbar());
     app.appendChild(renderHero());
+    
+    setTimeout(() => {
+        changeBackground(0);
+    }, 100);
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
